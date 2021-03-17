@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Osu</string>
+    <string name="user_id">user_id</string>
+    <string name="username">username</string>
+    <string name="pp_rank">pp_rank</string>
+    <string name="level">level</string>
+    <string name="playcount">playcount</string>
+    <string name="accuracy">accuracy</string>
+    <string name="rank_ss">rank ss</string>
+    <string name="rank_ssh">rank ssh</string>
+    <string name="rank_s">rank s</string>
+    <string name="rank_sh">rank sh</string>
+    <string name="name">Name</string>
+    <string name="rank_a">rank a</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
+    <string name="name">Name</string>
 </resources>
