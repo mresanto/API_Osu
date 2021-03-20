@@ -22,4 +22,23 @@
     <string name="name">Name</string>
     <string name="name">Name</string>
     <string name="name">Name</string>
+    <string name="beatmap_id">beatmap_id</string>
+    <string name="score">score</string>
+    <string name="perfect">perfect</string>
+    <string name="countmiss">countmiss</string>
+    <string name="count300">count300</string>
+    <string name="count100">count100</string>
+    <string name="count50">count50</string>
+    <string name="maxcombo">maxcombo</string>
+    <string name="score_id">score_id</string>
+    <string name="approved">approved</string>
+    <string name="submit_date">submit_date</string>
+    <string name="last_update">last_update</string>
+    <string name="artist">artist</string>
+    <string name="creator">creator</string>
+    <string name="source">source</string>
+    <string name="title">title</string>
+    <string name="difiicultyranting">difiicultyranting</string>
+    <string name="max_combo">max_combo</string>
+    <string name="modo">modo</string>
 </resources>

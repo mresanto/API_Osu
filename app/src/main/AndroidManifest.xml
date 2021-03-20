@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Osu">
-        <activity android:name=".OsuUsuario"></activity>
+        <activity android:name=".OsuScore"></activity>
+        <activity android:name=".OsuMapa" />
+        <activity android:name=".OsuUsuario" />
         <activity android:name=".OsuCliente" />
         <activity android:name=".MainActivity">
             <intent-filter>
