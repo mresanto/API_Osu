@@ -10,18 +10,7 @@
     <string name="rank_ssh">rank ssh</string>
     <string name="rank_s">rank s</string>
     <string name="rank_sh">rank sh</string>
-    <string name="name">Name</string>
     <string name="rank_a">rank a</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
-    <string name="name">Name</string>
     <string name="beatmap_id">beatmap_id</string>
     <string name="score">score</string>
     <string name="perfect">perfect</string>
@@ -41,4 +30,8 @@
     <string name="difiicultyranting">difiicultyranting</string>
     <string name="max_combo">max_combo</string>
     <string name="modo">modo</string>
+    <string name="str_empty"> </string>
+    <string name="loading">Carregando</string>
+    <string name="no_search_term"> User invalido!</string>
+    <string name="no_network"> Sem rede!</string>
 </resources>
