@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnUsuario = findViewById(R.id.btnUsuario);
-        btnMapa = findViewById(R.id.btnMapa);
-        btnScore = findViewById(R.id.btnScore);
 
         btnUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,17 +26,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnMapa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        btnScore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
 }

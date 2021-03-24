@@ -10,7 +10,6 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -22,20 +21,35 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.net.HttpURLConnection;
-import java.net.*;
-
-import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
-
 public class OsuUsuario extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
     private EditText userName;
+    private TextView TXTID;
+    private TextView TXTusuario;
+    private TextView TXTlevel;
+    private TextView TXTplaycount;
+    private TextView TXTaccuracy;
+    private TextView TXTSS;
+    private TextView TXTSSH;
+    private TextView TXTS;
+    private TextView TXTSH;
+    private TextView TXTA;
     private TextView pp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_osu_usuario);
-        pp = findViewById(R.id.textView2);
+        TXTID = findViewById(R.id.txtID);
+        TXTusuario = findViewById(R.id.txtUsername);
+        pp = findViewById(R.id.txtPP);
+        TXTlevel = findViewById(R.id.txtLevel);
+        TXTplaycount = findViewById(R.id.txtPlaycount);
+        TXTaccuracy = findViewById(R.id.txtAcc);
+        TXTSS = findViewById(R.id.txtSS);
+        TXTSSH = findViewById(R.id.txtSSH);
+        TXTS = findViewById(R.id.txtS);
+        TXTSH = findViewById(R.id.txtSH);
+        TXTA = findViewById(R.id.txtA);
         userName = findViewById(R.id.edPesquisaUsuario);
         if (getSupportLoaderManager().getLoader(0) != null){
             getSupportLoaderManager().initLoader(0, null, this);
@@ -90,23 +104,51 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
         try{
             JSONArray jsonArray = new JSONArray(data);
-
+            String id = null;
+            String username = null;
             String ppRank = null;
+            String level = null;
+            String playcount = null;
+            String accuracy = null;
+            String SS = null;
+            String SSH = null;
+            String S = null;
+            String SH = null;
+            String A = null;
 
             JSONObject user = jsonArray.getJSONObject(0);
             try{
+                id = user.getString("user_id");
+                username = user.getString("username");
+                playcount = user.getString("playcount");
                 ppRank = user.getString("pp_rank");
+                level = user.getString("level");
+                accuracy = user.getString("accuracy");
+                SS = user.getString("count_rank_ss");
+                SSH = user.getString("count_rank_ssh");
+                S = user.getString("count_rank_s");
+                SH = user.getString("count_rank_sh");
+                A = user.getString("count_rank_a");
             }catch(JSONException e){
                 e.printStackTrace();
 
         }
             if(ppRank != null){
-                pp.setText(ppRank);
+                TXTID.setText("ID: " + id);
+                TXTusuario.setText("Username: " + username);
+                pp.setText("Rank: " + ppRank);
+                TXTlevel.setText("Level:" + level);
+                TXTplaycount.setText("Playcount: " + playcount);
+                TXTaccuracy.setText("Accuracy: " + accuracy);
+                TXTSS.setText("SS: " + SS);
+                TXTSSH.setText("SS: " + SSH);
+                TXTS.setText("S: " + S);
+                TXTSH.setText("S: " + SH);
+                TXTA.setText("A: " + A);
             } else{
-                pp.setText(R.string.str_empty);
+                userName.setHint("usuário não encontrado");
             }
         } catch (Exception e){
-            pp.setText("bostil");
             e.printStackTrace();
         }
     }

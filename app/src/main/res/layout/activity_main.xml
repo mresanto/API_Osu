@@ -13,15 +13,4 @@
         android:layout_height="wrap_content"
         android:text="Usuario" />
 
-    <Button
-        android:id="@+id/btnMapa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mapa" />
-
-    <Button
-        android:id="@+id/btnScore"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Score" />
 </LinearLayout>
