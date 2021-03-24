@@ -89,12 +89,12 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
         try{
-            JSONObject jsonObject = new JSONObject(data);
-            JSONArray usersArray = jsonObject.getJSONArray("users");
-            String ppRank = null;
-            JSONObject user = usersArray.getJSONObject(1);
-            try{
+            JSONArray jsonArray = new JSONArray(data);
 
+            String ppRank = null;
+
+            JSONObject user = jsonArray.getJSONObject(0);
+            try{
                 ppRank = user.getString("pp_rank");
             }catch(JSONException e){
                 e.printStackTrace();
