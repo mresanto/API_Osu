@@ -5,7 +5,7 @@ import android.content.Context;
 import androidx.annotation.Nullable;
 import androidx.loader.content.AsyncTaskLoader;
 
-import com.example.osu.NetworkUtils;
+import com.example.osu.Utilits.NetworkUtils;
 
 public class CarregaUsuario extends AsyncTaskLoader<String> {
     private String mQueryString;
