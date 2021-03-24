@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.osu.CarregarClasses.CarregaUsuario;
+import com.example.osu.Classes.ActionUsuario;
+import com.example.osu.Classes.Usuario;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -80,11 +82,11 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
             userName.setText(R.string.str_empty);
             pp.setText(R.string.loading);
         }
-        else{
-            if(queryString.length() == 0){
+        else {
+            if (queryString.length() == 0) {
                 userName.setText(R.string.str_empty);
                 pp.setText(R.string.no_search_term);
-            }else{
+            } else {
                 userName.setText(" ");
                 pp.setText(R.string.no_network);
             }
@@ -104,47 +106,68 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
         try{
             JSONArray jsonArray = new JSONArray(data);
-            String id = null;
-            String username = null;
-            String ppRank = null;
-            String level = null;
-            String playcount = null;
-            String accuracy = null;
-            String SS = null;
-            String SSH = null;
-            String S = null;
-            String SH = null;
-            String A = null;
+            Usuario usuario = new Usuario();
+            usuario = null;
+
+           // String id = null;
+           // String username = null;
+           // String ppRank = null;
+           // String level = null;
+           // String playcount = null;
+           // String accuracy = null;
+           // String SS = null;
+           // String SSH = null;
+           // String S = null;
+           // String SH = null;
+           // String A = null;
 
             JSONObject user = jsonArray.getJSONObject(0);
             try{
-                id = user.getString("user_id");
-                username = user.getString("username");
-                playcount = user.getString("playcount");
-                ppRank = user.getString("pp_rank");
-                level = user.getString("level");
-                accuracy = user.getString("accuracy");
-                SS = user.getString("count_rank_ss");
-                SSH = user.getString("count_rank_ssh");
-                S = user.getString("count_rank_s");
-                SH = user.getString("count_rank_sh");
-                A = user.getString("count_rank_a");
+                usuario.setUserId(user.getInt("user_id"));
+                usuario.setUsername(user.getString("username"));
+                usuario.setPlaycount(user.getInt("playcount"));
+                usuario.setPp_rank(user.getString("pp_rank"));
+                usuario.setLevel( user.getDouble("level"));
+                usuario.setAccuracy( user.getDouble("accuracy"));
+                usuario.setCount_rank_ss( user.getInt("count_rank_ss"));
+                usuario.setCount_rank_ssh(user.getInt("count_rank_ssh"));
+                usuario.setCount_rank_s(user.getInt("count_rank_s"));
+                usuario.setCount_rank_sh(user.getInt("count_rank_sh"));
+                usuario.setCount_rank_a(user.getInt("count_rank_a"));
+                //id = user.getString("user_id");
+                //username = user.getString("username");
+                //playcount = user.getString("playcount");
+                //ppRank = user.getString("pp_rank");
+                //level = user.getString("level");
+                //accuracy = user.getString("accuracy");
+                //SS = user.getString("count_rank_ss");
+                //SSH = user.getString("count_rank_ssh");
+                //S = user.getString("count_rank_s");
+                //SH = user.getString("count_rank_sh");
+                //A = user.getString("count_rank_a");
             }catch(JSONException e){
                 e.printStackTrace();
 
         }
-            if(ppRank != null){
-                TXTID.setText("ID: " + id);
-                TXTusuario.setText("Username: " + username);
-                pp.setText("Rank: " + ppRank);
-                TXTlevel.setText("Level:" + level);
-                TXTplaycount.setText("Playcount: " + playcount);
-                TXTaccuracy.setText("Accuracy: " + accuracy);
-                TXTSS.setText("SS: " + SS);
-                TXTSSH.setText("SS: " + SSH);
-                TXTS.setText("S: " + S);
-                TXTSH.setText("S: " + SH);
-                TXTA.setText("A: " + A);
+            if(usuario.pp_rank != null){
+                TXTID.setText("ID: " + usuario.userId);
+                TXTusuario.setText("Username: " + usuario.username);
+                pp.setText("Rank: " + usuario.pp_rank);
+                TXTlevel.setText("Level:" + usuario.level);
+                TXTplaycount.setText("Playcount: " + usuario.playcount);
+                TXTaccuracy.setText("Accuracy: " + usuario.accuracy);
+                TXTSS.setText("SS: " + usuario.count_rank_ss);
+                TXTSSH.setText("SS: " + usuario.count_rank_ssh);
+                TXTS.setText("S: " + usuario.count_rank_s);
+                TXTSH.setText("S: " + usuario.count_rank_sh);
+                TXTA.setText("A: " + usuario.count_rank_a);
+
+                try {
+                    SalvarOsu(usuario);
+                }
+                catch (Exception e){
+                  e.printStackTrace();
+                }
             } else{
                 userName.setHint("usuário não encontrado");
             }
@@ -156,5 +179,10 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
     @Override
     public void onLoaderReset(@NonNull Loader<String> loader) {
 
+    }
+
+    public void SalvarOsu(Usuario usuario){
+        ActionUsuario salvar = new ActionUsuario(this);
+        salvar.AdicionarUsuario(usuario);
     }
 }
