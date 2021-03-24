@@ -9,6 +9,9 @@ import androidx.annotation.Nullable;
 
 import com.example.osu.Utilits.DBHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ActionUsuario extends DBHelper {
 
 
@@ -37,38 +40,41 @@ public class ActionUsuario extends DBHelper {
             return true;
     }
 
-    public Usuario BuscarUsuario(Integer id_pesquisa){
+    public List<Usuario> listarUsuario(){
         SQLiteDatabase db = getReadableDatabase();
-        String sql = "SELECT * FROM Usuario WHERE User_id = " + id_pesquisa + " ;";
+        List<Usuario> usuarios = new ArrayList<>();
+        String sql = "SELECT * FROM Usuario ;";
         Cursor c =db.rawQuery(sql, null);
 
-        Usuario usuario = new Usuario();
+        while(c.moveToNext()) {
 
-        Integer id = c.getInt(c.getColumnIndex("User_id"));
-        String usernmae = c.getString(c.getColumnIndex("Username"));
-        String pp_rank = c.getString(c.getColumnIndex("PP_rank"));
-        Double level = c.getDouble(c.getColumnIndex("Level"));
-        Integer playcount = c.getInt(c.getColumnIndex("Playcount"));
-        Double accuracy = c.getDouble(c.getColumnIndex("Accuracy"));
-        Integer rank_ss = c.getInt(c.getColumnIndex("Rank_ss"));
-        Integer rank_ssh = c.getInt(c.getColumnIndex("Rank_ssh"));
-        Integer rank_s = c.getInt(c.getColumnIndex("Ranks_s"));
-        Integer rank_sh = c.getInt(c.getColumnIndex("Rank_sh"));
-        Integer rank_a = c.getInt(c.getColumnIndex("Rank_a"));
-
-
-        usuario.setUserId(id);
-        usuario.setUsername(usernmae);
-        usuario.setPp_rank(pp_rank);
-        usuario.setLevel(level);
-        usuario.setAccuracy(accuracy);
-        usuario.setCount_rank_ss(rank_ss);
-        usuario.setCount_rank_sh(rank_sh);
-        usuario.setCount_rank_s(rank_s);
-        usuario.setCount_rank_ssh(rank_ssh);
-        usuario.setCount_rank_a(rank_a);
+            Usuario usuario = new Usuario();
+            Integer id = c.getInt(c.getColumnIndex("User_id"));
+            String usernmae = c.getString(c.getColumnIndex("Username"));
+            String pp_rank = c.getString(c.getColumnIndex("PP_rank"));
+            Double level = c.getDouble(c.getColumnIndex("Level"));
+            Integer playcount = c.getInt(c.getColumnIndex("Playcount"));
+            Double accuracy = c.getDouble(c.getColumnIndex("Accuracy"));
+            Integer rank_ss = c.getInt(c.getColumnIndex("Rank_ss"));
+            Integer rank_ssh = c.getInt(c.getColumnIndex("Rank_ssh"));
+            Integer rank_s = c.getInt(c.getColumnIndex("Ranks_s"));
+            Integer rank_sh = c.getInt(c.getColumnIndex("Rank_sh"));
+            Integer rank_a = c.getInt(c.getColumnIndex("Rank_a"));
 
 
-        return usuario;
+            usuario.setUserId(id);
+            usuario.setUsername(usernmae);
+            usuario.setPp_rank(pp_rank);
+            usuario.setLevel(level);
+            usuario.setAccuracy(accuracy);
+            usuario.setCount_rank_ss(rank_ss);
+            usuario.setCount_rank_sh(rank_sh);
+            usuario.setCount_rank_s(rank_s);
+            usuario.setCount_rank_ssh(rank_ssh);
+            usuario.setCount_rank_a(rank_a);
+
+            usuarios.add(usuario);
+        }
+        return usuarios;
     }
 }

@@ -1,5 +1,7 @@
 package com.example.osu.Classes;
 
+import android.widget.ListAdapter;
+
 public class Usuario {
 
     public int getUserId() {

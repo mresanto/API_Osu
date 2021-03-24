@@ -7,11 +7,13 @@ import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -36,6 +38,7 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
     private TextView TXTSH;
     private TextView TXTA;
     private TextView pp;
+    private Button btnHist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +59,15 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
         if (getSupportLoaderManager().getLoader(0) != null){
             getSupportLoaderManager().initLoader(0, null, this);
         }
-    }
 
+        btnHist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OsuUsuario.this, HistoricoUsuario.class);
+                startActivity(intent);
+            }
+        });
+    }
     public void buscaUsuario(View view){
         String queryString = userName.getText().toString();
         InputMethodManager inputManager = (InputMethodManager)
