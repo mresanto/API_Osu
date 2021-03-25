@@ -66,6 +66,7 @@ public class ActionUsuario extends DBHelper {
             usuario.setUsername(usernmae);
             usuario.setPp_rank(pp_rank);
             usuario.setLevel(level);
+            usuario.setPlaycount(playcount);
             usuario.setAccuracy(accuracy);
             usuario.setCount_rank_ss(rank_ss);
             usuario.setCount_rank_sh(rank_sh);
