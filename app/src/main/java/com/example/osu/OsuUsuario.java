@@ -60,6 +60,8 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
             getSupportLoaderManager().initLoader(0, null, this);
         }
 
+        btnHist = findViewById(R.id.btnHist);
+
         btnHist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
