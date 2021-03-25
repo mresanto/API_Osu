@@ -4,11 +4,11 @@ import android.widget.ListAdapter;
 
 public class Usuario {
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -90,7 +90,7 @@ public class Usuario {
         this.count_rank_a = count_rank_a;
     }
 
-    public int userId;
+    public String userId;
     public String username;
     public String pp_rank;
     public String level;
