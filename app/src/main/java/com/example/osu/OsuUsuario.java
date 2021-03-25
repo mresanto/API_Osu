@@ -135,17 +135,17 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
 
             JSONObject user = jsonArray.getJSONObject(0);
             try{
-                usuario.setUserId(user.getInt("user_id"));
+                usuario.setUserId(user.getString("user_id"));
                 usuario.setUsername(user.getString("username"));
-                usuario.setPlaycount(user.getInt("playcount"));
+                usuario.setPlaycount(user.getString("playcount"));
                 usuario.setPp_rank(user.getString("pp_rank"));
-                usuario.setLevel( user.getDouble("level"));
-                usuario.setAccuracy( user.getDouble("accuracy"));
-                usuario.setCount_rank_ss( user.getInt("count_rank_ss"));
-                usuario.setCount_rank_ssh(user.getInt("count_rank_ssh"));
-                usuario.setCount_rank_s(user.getInt("count_rank_s"));
-                usuario.setCount_rank_sh(user.getInt("count_rank_sh"));
-                usuario.setCount_rank_a(user.getInt("count_rank_a"));
+                usuario.setLevel( user.getString("level"));
+                usuario.setAccuracy( user.getString("accuracy"));
+                usuario.setCount_rank_ss( user.getString("count_rank_ss"));
+                usuario.setCount_rank_ssh(user.getString("count_rank_ssh"));
+                usuario.setCount_rank_s(user.getString("count_rank_s"));
+                usuario.setCount_rank_sh(user.getString("count_rank_sh"));
+                usuario.setCount_rank_a(user.getString("count_rank_a"));
                 //id = user.getString("user_id");
                 //username = user.getString("username");
                 //playcount = user.getString("playcount");
