@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnUsuario, btnMapa, btnScore;
+    Button btnUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+
 
     }
 }
