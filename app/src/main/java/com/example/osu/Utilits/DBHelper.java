@@ -19,7 +19,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String str= "CREATE TABLE Usuario(User_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, Username VARCHAR(50), PP_rank INTEGER,Level REAL, Playcount INTEGER, Accuracy REAL, Rank_ss INTEGER, Rank_ssh INTEGER, Rank_s INTEGER, rank_sh INTEGER, rank_a INTEGER);";
+        String str= "CREATE TABLE Usuario(Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, User_id TEXT, Username TEXT, PP_rank TEXT,Level TEXT, Playcount TEXT, Accuracy TEXT, Rank_ss TEXT, Rank_ssh TEXT, Rank_s TEXT, rank_sh TEXT, rank_a TEXT);";
         try {
             db.execSQL(str);
             Log.i("INFO DB", "Sucesso ao criar a tabela");

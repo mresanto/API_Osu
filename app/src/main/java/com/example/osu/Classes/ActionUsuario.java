@@ -49,17 +49,17 @@ public class ActionUsuario extends DBHelper {
         while(c.moveToNext()) {
 
             Usuario usuario = new Usuario();
-            Integer id = c.getInt(c.getColumnIndex("User_id"));
+            String id = c.getString(c.getColumnIndex("User_id"));
             String usernmae = c.getString(c.getColumnIndex("Username"));
             String pp_rank = c.getString(c.getColumnIndex("PP_rank"));
-            Double level = c.getDouble(c.getColumnIndex("Level"));
-            Integer playcount = c.getInt(c.getColumnIndex("Playcount"));
-            Double accuracy = c.getDouble(c.getColumnIndex("Accuracy"));
-            Integer rank_ss = c.getInt(c.getColumnIndex("Rank_ss"));
-            Integer rank_ssh = c.getInt(c.getColumnIndex("Rank_ssh"));
-            Integer rank_s = c.getInt(c.getColumnIndex("Ranks_s"));
-            Integer rank_sh = c.getInt(c.getColumnIndex("Rank_sh"));
-            Integer rank_a = c.getInt(c.getColumnIndex("Rank_a"));
+            String level = c.getString(c.getColumnIndex("Level"));
+            String playcount = c.getString(c.getColumnIndex("Playcount"));
+            String accuracy = c.getString(c.getColumnIndex("Accuracy"));
+            String rank_ss = c.getString(c.getColumnIndex("Rank_ss"));
+            String rank_ssh = c.getString(c.getColumnIndex("Rank_ssh"));
+            String rank_s = c.getString(c.getColumnIndex("Ranks_s"));
+            String rank_sh = c.getString(c.getColumnIndex("Rank_sh"));
+            String rank_a = c.getString(c.getColumnIndex("Rank_a"));
 
 
             usuario.setUserId(id);
