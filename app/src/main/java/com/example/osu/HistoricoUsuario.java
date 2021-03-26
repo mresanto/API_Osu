@@ -24,9 +24,9 @@ public class HistoricoUsuario extends AppCompatActivity {
 
         ListView lista = (ListView) findViewById(R.id.lvUsuarios);
 
-        ArrayList<Usuario> cliente = new ArrayList(usuario.listarUsuario());
+        ArrayList<String> cliente = new ArrayList(usuario.listarUsuario());
         
-        ArrayAdapter<Usuario> listaadd = new ArrayAdapter<Usuario>(this, android.R.layout.simple_list_item_1, cliente);
+        ArrayAdapter<String> listaadd = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cliente);
 
         lista.setAdapter(listaadd);
     }
