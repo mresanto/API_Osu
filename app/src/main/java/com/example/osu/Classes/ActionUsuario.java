@@ -29,7 +29,7 @@ public class ActionUsuario extends DBHelper {
         cv.put("Accuracy", usuario.accuracy);
         cv.put("Rank_ss", usuario.count_rank_ss);
         cv.put("Rank_ssh", usuario.count_rank_ssh);
-        cv.put("Ranks_s", usuario.count_rank_s);
+        cv.put("Rank_s", usuario.count_rank_s);
         cv.put("Rank_sh", usuario.count_rank_sh);
         cv.put("Rank_a", usuario.count_rank_a);
 
@@ -57,7 +57,7 @@ public class ActionUsuario extends DBHelper {
             String accuracy = c.getString(c.getColumnIndex("Accuracy"));
             String rank_ss = c.getString(c.getColumnIndex("Rank_ss"));
             String rank_ssh = c.getString(c.getColumnIndex("Rank_ssh"));
-            String rank_s = c.getString(c.getColumnIndex("Ranks_s"));
+            String rank_s = c.getString(c.getColumnIndex("Rank_s"));
             String rank_sh = c.getString(c.getColumnIndex("Rank_sh"));
             String rank_a = c.getString(c.getColumnIndex("Rank_a"));
 

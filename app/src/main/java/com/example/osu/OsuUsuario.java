@@ -119,7 +119,6 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
         try{
             JSONArray jsonArray = new JSONArray(data);
             Usuario usuario = new Usuario();
-            usuario = null;
 
            // String id = null;
            // String username = null;
