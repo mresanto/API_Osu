@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.osu.CarregarClasses.CarregaUsuario;
@@ -39,6 +40,7 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
     private TextView TXTA;
     private TextView pp;
     private Button btnHist;
+    private ProgressBar pbHist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

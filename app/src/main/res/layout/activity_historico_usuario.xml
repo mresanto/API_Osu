@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".HistoricoUsuario">
 
+    <ProgressBar
+        android:id="@+id/pbhist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        />
     <ListView
         android:id="@+id/lvUsuarios"
         android:layout_width="match_parent"
