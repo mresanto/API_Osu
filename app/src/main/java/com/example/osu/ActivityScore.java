@@ -97,24 +97,24 @@ public class ActivityScore extends AppCompatActivity implements LoaderManager.Lo
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
         try{
             JSONArray jsonArray = new JSONArray(data);
-            UserRecent userRecent = new UserRecent();
-
+            UserRecent user = new UserRecent();
             JSONObject score = jsonArray.getJSONObject(0);
             try{
-                userRecent.setBeatmap(score.getString("beatmap_id"));
-                userRecent.setScore(score.getString("score"));
-                userRecent.setMaxcombo(score.getString("maxcombo"));
-                userRecent.setCountmiss(score.getString("countmiss"));
-                userRecent.setRank(score.getString("rank"));
+                user.setBeatmap((score.getString("beatmap_id")));
+                user.setScore(score.getString("score"));
+                user.setMaxcombo(score.getString("maxcombo"));
+                user.setCountmiss(score.getString("countmiss"));
+                user.setRank(score.getString("rank"));
+
             }catch(JSONException e){
                 e.printStackTrace();
             }
-            if(userRecent.beatmap != null){
-                beatmap.setText("Id do mapa: " + userRecent.beatmap);
-                TXTscore.setText("Score: " + userRecent.score);
-                maxcombo.setText("Combo: " + userRecent.maxcombo);
-                countmiss.setText("Misscount: " + userRecent.countmiss);
-                rank.setText("Rank: " + userRecent.rank);
+            if(user.beatmap != null){
+                beatmap.setText("Id do mapa: " + user.beatmap);
+                TXTscore.setText("Score: " + user.score);
+                maxcombo.setText("Combo: " + user.maxcombo);
+                countmiss.setText("Misscount: " + user.countmiss);
+                rank.setText("Rank: " + user.rank);
             } else{
                 username.setHint("Usuário não econtrado");
             }

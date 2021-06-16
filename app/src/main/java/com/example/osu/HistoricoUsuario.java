@@ -57,7 +57,7 @@ public class HistoricoUsuario extends AppCompatActivity {
                         try {
                             pbHist.setProgress(i);
                             listaadd.add(cliente.get(i));
-                            Thread.sleep(500);
+                            Thread.sleep(100);
                         }
                         catch (InterruptedException e){
                             System.out.println("Não sei pq");
@@ -78,6 +78,9 @@ public class HistoricoUsuario extends AppCompatActivity {
             }
         });
         t1.start();
+        if(run == false){
+            t1.interrupt();
+        }
 
     }
 }

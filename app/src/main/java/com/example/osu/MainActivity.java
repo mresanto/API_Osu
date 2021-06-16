@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnUsuario;
     Button btnScore;
+    Button btnLocalizacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
         btnUsuario = findViewById(R.id.btnUsuario);
         btnScore = findViewById(R.id.btnScore);
+        btnLocalizacao = findViewById(R.id.btnLoc);
+
 
         btnUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnLocalizacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Localizacao.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 

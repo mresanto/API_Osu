@@ -161,7 +161,7 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
             }catch(JSONException e){
                 e.printStackTrace();
 
-        }
+            }
             if(usuario.pp_rank != null){
                 TXTID.setText("ID: " + usuario.userId);
                 TXTusuario.setText("Username: " + usuario.username);

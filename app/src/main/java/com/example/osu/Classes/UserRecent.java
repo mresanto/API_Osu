@@ -2,24 +2,57 @@ package com.example.osu.Classes;
 
 public class UserRecent {
 
-    public String getBeatmap(){return beatmap; }
-    public void setBeatmap(String beatmap_id){this.beatmap = beatmap; }
+    public String getBeatmap() {
+        return beatmap;
+    }
 
-    public String getScore(){return score; }
-    public void setScore(String score){this.score = this.score; }
+    public void setBeatmap(String beatmap) {
+        this.beatmap = beatmap;
+    }
 
-    public String getMaxcombo(){return maxcombo; }
-    public void setMaxcombo(String maxcombo){this.maxcombo = this.maxcombo; }
+    public String getScore() {
+        return score;
+    }
 
-    public String getCountmiss(){return countmiss; }
-    public void setCountmiss(String countmiss){this.countmiss = this.countmiss;}
+    public void setScore(String score) {
+        this.score = score;
+    }
 
-    public String getRank(){return rank; }
-    public void setRank(String rank){this.rank = this.rank; }
+    public String getMaxcombo() {
+        return maxcombo;
+    }
+
+    public void setMaxcombo(String maxcombo) {
+        this.maxcombo = maxcombo;
+    }
+
+    public String getCountmiss() {
+        return countmiss;
+    }
+
+    public void setCountmiss(String countmiss) {
+        this.countmiss = countmiss;
+    }
+
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
+    }
 
     public String beatmap;
     public String score;
     public String maxcombo;
     public String countmiss;
     public String rank;
+
+    public UserRecent() {
+        this.beatmap = beatmap;
+        this.score = score;
+        this.maxcombo = maxcombo;
+        this.countmiss = countmiss;
+        this.rank = rank;
+    }
 }
