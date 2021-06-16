@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Notification;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -15,14 +16,14 @@ import com.example.osu.Classes.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class HistoricoUsuario extends AppCompatActivity {
 
     private ProgressBar pbHist;
-    private int pbHistStatus = 0;
-
+    private int sizeusuario;
     private Handler mHandler = new Handler();
-
+    private boolean run = true;
     private ListView lista;
     ArrayList<String> cliente;
     ArrayAdapter<String> listaadd;
@@ -37,37 +38,46 @@ public class HistoricoUsuario extends AppCompatActivity {
         lista = (ListView) findViewById(R.id.lvUsuarios);
         lista.setVisibility(View.INVISIBLE);
 
-        new Thread(new Runnable() {
+        ActionUsuario usuario = new ActionUsuario(this);
+        long delay = 1000;
+
+        cliente = new ArrayList(usuario.listarUsuario());
+        sizeusuario = cliente.size();
+
+        pbHist.setMax(sizeusuario);
+        pbHist.setVisibility(View.VISIBLE);
+
+        listaadd = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+
+        Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                while (pbHistStatus < 100){
-                    pbHistStatus++;
-                    android.os.SystemClock.sleep(50);
+                while (run) {
+                    for (int i = 0; i < sizeusuario; i++) {
+                        try {
+                            pbHist.setProgress(i);
+                            listaadd.add(cliente.get(i));
+                            Thread.sleep(500);
+                        }
+                        catch (InterruptedException e){
+                            System.out.println("Não sei pq");
+                            Log.i("Slepp", "Nao sei");
+                            e.printStackTrace();
+                        }
+                    }
+                    run = false;
                     mHandler.post(new Runnable() {
                         @Override
                         public void run() {
-                            pbHist.setProgress(pbHistStatus);
+                            lista.setAdapter(listaadd);
+                            lista.setVisibility(View.VISIBLE);
+                            pbHist.setVisibility(View.INVISIBLE);
                         }
                     });
                 }
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        lista.setVisibility(View.VISIBLE);
-                        pbHist.setVisibility(View.INVISIBLE);
-                    }
-                });
             }
-        }).start();
+        });
+        t1.start();
 
-        ActionUsuario usuario = new ActionUsuario(this);
-        int position = 0;
-
-
-        cliente = new ArrayList(usuario.listarUsuario());
-        
-        listaadd = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cliente);
-
-        lista.setAdapter(listaadd);
     }
 }
