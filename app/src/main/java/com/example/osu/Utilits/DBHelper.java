@@ -20,8 +20,10 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String str= "CREATE TABLE Usuario(Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, User_id TEXT, Username TEXT, PP_rank TEXT,Level TEXT, Playcount TEXT, Accuracy TEXT, Rank_ss TEXT, Rank_ssh TEXT, Rank_s TEXT, Rank_sh TEXT, Rank_a TEXT);";
+        String str2= "CREATE TABLE Score(Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, beatmap_id TEXT, score TEXT, maxcombo TEXT, countmiss TEXT, rank TEXT);";
         try {
             db.execSQL(str);
+            db.execSQL(str2);
             Log.i("INFO DB", "Sucesso ao criar a tabela");
         }catch (Exception e){
             Log.i("INFO DB", "Erro ao criar a tabela" + e.getMessage());
@@ -31,6 +33,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS Usuario;");
+        db.execSQL("DROP TABLE IF EXISTS Score;");
         onCreate(db);
     }
 }

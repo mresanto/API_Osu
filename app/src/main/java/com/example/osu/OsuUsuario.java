@@ -63,7 +63,6 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
         }
 
         btnHist = findViewById(R.id.btnHist);
-
         btnHist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +70,7 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
                 startActivity(intent);
             }
         });
+
     }
     public void buscaUsuario(View view){
         String queryString = userName.getText().toString();

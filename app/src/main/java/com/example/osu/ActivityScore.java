@@ -7,17 +7,22 @@ import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.osu.CarregarClasses.CarregaScore;
 import com.example.osu.CarregarClasses.CarregaUsuario;
+import com.example.osu.Classes.ActionScore;
+import com.example.osu.Classes.ActionUsuario;
 import com.example.osu.Classes.UserRecent;
+import com.example.osu.Classes.Usuario;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,6 +35,7 @@ public class ActivityScore extends AppCompatActivity implements LoaderManager.Lo
     private TextView maxcombo;
     private TextView countmiss;
     private TextView rank;
+    private Button btnHist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +47,19 @@ public class ActivityScore extends AppCompatActivity implements LoaderManager.Lo
         maxcombo = findViewById(R.id.maxcombo);
         countmiss = findViewById(R.id.countmiss);
         rank = findViewById(R.id.rank);
+        btnHist = findViewById(R.id.btnHistScore);
         if (getSupportLoaderManager().getLoader(0) != null) {
             getSupportLoaderManager().initLoader(0, null, this);
         }
+
+        btnHist = findViewById(R.id.btnHistScore);
+        btnHist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityScore.this, HistoricoScore.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -98,6 +114,7 @@ public class ActivityScore extends AppCompatActivity implements LoaderManager.Lo
         try{
             JSONArray jsonArray = new JSONArray(data);
             UserRecent user = new UserRecent();
+
             JSONObject score = jsonArray.getJSONObject(0);
             try{
                 user.setBeatmap((score.getString("beatmap_id")));
@@ -115,6 +132,13 @@ public class ActivityScore extends AppCompatActivity implements LoaderManager.Lo
                 maxcombo.setText("Combo: " + user.maxcombo);
                 countmiss.setText("Misscount: " + user.countmiss);
                 rank.setText("Rank: " + user.rank);
+
+                try{
+                    SalvarScore(user);
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
             } else{
                 username.setHint("Usuário não econtrado");
             }
@@ -126,5 +150,9 @@ public class ActivityScore extends AppCompatActivity implements LoaderManager.Lo
     @Override
     public void onLoaderReset(@NonNull Loader<String> loader) {
 
+    }
+    public void SalvarScore(UserRecent score){
+        ActionScore salvar = new ActionScore(this);
+        salvar.AdicionarScore(score);
     }
 }

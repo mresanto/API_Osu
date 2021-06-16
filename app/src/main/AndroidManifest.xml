@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Osu"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".ActivityScore"></activity>
+        <activity android:name=".HistoricoScore"></activity>
+        <activity android:name=".ActivityScore" />
+
         <receiver android:name=".OsuWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
