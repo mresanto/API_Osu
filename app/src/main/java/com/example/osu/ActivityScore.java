@@ -47,19 +47,11 @@ public class ActivityScore extends AppCompatActivity implements LoaderManager.Lo
         maxcombo = findViewById(R.id.maxcombo);
         countmiss = findViewById(R.id.countmiss);
         rank = findViewById(R.id.rank);
-        btnHist = findViewById(R.id.btnHistScore);
         if (getSupportLoaderManager().getLoader(0) != null) {
             getSupportLoaderManager().initLoader(0, null, this);
         }
 
-        btnHist = findViewById(R.id.btnHistScore);
-        btnHist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ActivityScore.this, HistoricoScore.class);
-                startActivity(intent);
-            }
-        });
+
 
 
     }
