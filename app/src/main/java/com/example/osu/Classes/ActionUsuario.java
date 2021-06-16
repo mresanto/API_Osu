@@ -20,8 +20,9 @@ public class ActionUsuario extends DBHelper {
     }
 
     public boolean AdicionarUsuario(Usuario usuario ){
-        SQLiteDatabase db = getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
+        cv.put("User_id", usuario.userId);
         cv.put("Username", usuario.username);
         cv.put("PP_rank", usuario.pp_rank);
         cv.put("Level", usuario.level);
@@ -29,7 +30,7 @@ public class ActionUsuario extends DBHelper {
         cv.put("Accuracy", usuario.accuracy);
         cv.put("Rank_ss", usuario.count_rank_ss);
         cv.put("Rank_ssh", usuario.count_rank_ssh);
-        cv.put("Ranks_s", usuario.count_rank_s);
+        cv.put("Rank_s", usuario.count_rank_s);
         cv.put("Rank_sh", usuario.count_rank_sh);
         cv.put("Rank_a", usuario.count_rank_a);
 
@@ -71,7 +72,7 @@ public class ActionUsuario extends DBHelper {
             //usuario.setCount_rank_ss(rank_ss);
             //usuario.setCount_rank_sh(rank_sh);
             //usuario.setCount_rank_s(rank_s);
-            //usuario.setCount_rank_ssh(rank_ssh);
+            //usuario.setCount_rank'_ssh(rank_ssh);
             //usuario.setCount_rank_a(rank_a);
 //
             usuarios.add(username);
