@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 public class MainActivity extends AppCompatActivity {
 
     Button btnUsuario;
+    Button btnScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnUsuario = findViewById(R.id.btnUsuario);
+        btnScore = findViewById(R.id.btnScore);
 
         btnUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,7 +29,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        btnScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ActivityScore.class);
+                startActivity(intent);
+            }
+        });
 
 
 

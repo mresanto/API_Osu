@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Osu"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".HistoricoUsuario"></activity>
+        <activity android:name=".ActivityScore"></activity>
+        <activity android:name=".HistoricoUsuario" />
         <activity android:name=".OsuUsuario" />
         <activity android:name=".MainActivity">
             <intent-filter>
