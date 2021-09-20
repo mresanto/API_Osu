@@ -42,11 +42,16 @@ public class UserRecent {
         this.rank = rank;
     }
 
+    public String getUsername(){return username;}
+
+    public void setUsername(String username){this.username = username;}
+
     public String beatmap;
     public String score;
     public String maxcombo;
     public String countmiss;
     public String rank;
+    public String username;
 
     public UserRecent() {
         this.beatmap = beatmap;
@@ -54,5 +59,6 @@ public class UserRecent {
         this.maxcombo = maxcombo;
         this.countmiss = countmiss;
         this.rank = rank;
+        this.username = username;
     }
 }

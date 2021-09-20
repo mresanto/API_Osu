@@ -15,8 +15,8 @@ import java.util.ArrayList;
 public class HistoricoScore extends AppCompatActivity {
 
     private ListView lista;
-    ArrayList<UserRecent> score;
-    ArrayAdapter<UserRecent> listaadd;
+    ArrayList<String> score;
+    ArrayAdapter<String> listaadd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +27,7 @@ public class HistoricoScore extends AppCompatActivity {
         ActionScore scores = new ActionScore(this);
 
         score = new ArrayList(scores.ListarScore());
-
-        listaadd = new ArrayAdapter<UserRecent>(this, android.R.layout.simple_list_item_1, score);
-
+        listaadd = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,score);
         lista.setAdapter(listaadd);
 
     }

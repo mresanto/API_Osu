@@ -60,8 +60,8 @@ public class HistoricoUsuario extends AppCompatActivity {
                             Thread.sleep(100);
                         }
                         catch (InterruptedException e){
-                            System.out.println("Não sei pq");
-                            Log.i("Slepp", "Nao sei");
+                            System.out.println("Erro de carregamento");
+                            Log.i("Slepp", "Erro de carregamento");
                             e.printStackTrace();
                         }
                     }

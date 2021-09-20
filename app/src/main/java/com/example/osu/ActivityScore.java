@@ -36,6 +36,7 @@ public class ActivityScore extends AppCompatActivity implements LoaderManager.Lo
     private TextView countmiss;
     private TextView rank;
     private Button btnHist;
+    private String copiaUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,13 +51,20 @@ public class ActivityScore extends AppCompatActivity implements LoaderManager.Lo
         if (getSupportLoaderManager().getLoader(0) != null) {
             getSupportLoaderManager().initLoader(0, null, this);
         }
-
-
+        btnHist = findViewById(R.id.btnHistSCore);
+        btnHist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityScore.this, HistoricoScore.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
     public void buscaUsuario(View view){
         String queryString = username.getText().toString();
+        copiaUsername= username.getText().toString();
         InputMethodManager inputManager = (InputMethodManager)
                 getSystemService(Context.INPUT_METHOD_SERVICE);
         if(inputManager != null){
@@ -114,7 +122,7 @@ public class ActivityScore extends AppCompatActivity implements LoaderManager.Lo
                 user.setMaxcombo(score.getString("maxcombo"));
                 user.setCountmiss(score.getString("countmiss"));
                 user.setRank(score.getString("rank"));
-
+                user.setUsername(copiaUsername);
             }catch(JSONException e){
                 e.printStackTrace();
             }

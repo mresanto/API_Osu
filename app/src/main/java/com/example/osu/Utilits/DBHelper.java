@@ -11,7 +11,7 @@ import com.example.osu.Classes.Usuario;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static int versao = 1;
+    private static int versao = 2;
     private static String nome = "Osu_DB";
 
     public DBHelper(@Nullable Context context){
@@ -20,7 +20,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String str= "CREATE TABLE Usuario(Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, User_id TEXT, Username TEXT, PP_rank TEXT,Level TEXT, Playcount TEXT, Accuracy TEXT, Rank_ss TEXT, Rank_ssh TEXT, Rank_s TEXT, Rank_sh TEXT, Rank_a TEXT);";
-        String str2= "CREATE TABLE Score(Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, beatmap_id TEXT, score TEXT, maxcombo TEXT, countmiss TEXT, rank TEXT);";
+        String str2= "CREATE TABLE Score(Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, beatmap_id TEXT, score TEXT, maxcombo TEXT, countmiss TEXT, rank TEXT, username TEXT);";
         try {
             db.execSQL(str);
             db.execSQL(str2);
