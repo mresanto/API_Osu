@@ -1,4 +1,4 @@
-package com.example.osu;
+package com.example.osu.ActionClasse;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
+
+import com.example.osu.R;
 
 public class MainActivity extends AppCompatActivity {
 

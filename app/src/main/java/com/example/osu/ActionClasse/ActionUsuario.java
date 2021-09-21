@@ -1,4 +1,4 @@
-package com.example.osu.Classes;
+package com.example.osu.ActionClasse;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
+import com.example.osu.Classes.Usuario;
 import com.example.osu.Utilits.DBHelper;
 
 import java.util.ArrayList;

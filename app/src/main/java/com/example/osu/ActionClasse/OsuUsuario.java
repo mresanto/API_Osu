@@ -1,4 +1,4 @@
-package com.example.osu;
+package com.example.osu.ActionClasse;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,8 +19,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.osu.CarregarClasses.CarregaUsuario;
-import com.example.osu.Classes.ActionUsuario;
 import com.example.osu.Classes.Usuario;
+import com.example.osu.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -58,11 +58,12 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
         TXTSH = findViewById(R.id.txtSH);
         TXTA = findViewById(R.id.txtA);
         userName = findViewById(R.id.edPesquisaUsuario);
+        btnHist = findViewById(R.id.btnHist);
+
         if (getSupportLoaderManager().getLoader(0) != null){
             getSupportLoaderManager().initLoader(0, null, this);
         }
 
-        btnHist = findViewById(R.id.btnHist);
         btnHist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

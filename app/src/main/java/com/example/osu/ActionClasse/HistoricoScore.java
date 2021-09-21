@@ -1,8 +1,7 @@
-package com.example.osu;
+package com.example.osu.ActionClasse;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Notification;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -11,41 +10,39 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
-import com.example.osu.Classes.ActionUsuario;
-import com.example.osu.Classes.Usuario;
+import com.example.osu.ActionClasse.ActionScore;
+import com.example.osu.R;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class HistoricoUsuario extends AppCompatActivity {
+public class HistoricoScore extends AppCompatActivity {
 
-    private ProgressBar pbHist;
-    private int sizeusuario;
+    private ProgressBar pbHistScore;
+    private int sizescore;
     private Handler mHandler = new Handler();
     private boolean run = true;
-    private ListView lista;
-    ArrayList<String> cliente;
-    ArrayAdapter<String> listaadd;
 
+    private ListView lista;
+    ArrayList<String> score;
+    ArrayAdapter<String> listaadd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_historico_usuario);
+        setContentView(R.layout.activity_historico_score);
 
-        pbHist = (ProgressBar) findViewById(R.id.pbhist);
-        lista = (ListView) findViewById(R.id.lvUsuarios);
+        pbHistScore = (ProgressBar) findViewById(R.id.pbhistScore);
+        lista = (ListView) findViewById(R.id.lvScores);
         lista.setVisibility(View.INVISIBLE);
 
-        ActionUsuario usuario = new ActionUsuario(this);
+        ActionScore scores = new ActionScore(this);
         long delay = 1000;
 
-        cliente = new ArrayList(usuario.listarUsuario());
-        sizeusuario = cliente.size();
+        score = new ArrayList(scores.ListarScore());
+        sizescore = score.size();
 
-        pbHist.setMax(sizeusuario);
-        pbHist.setVisibility(View.VISIBLE);
+        pbHistScore.setMax(sizescore-1);
+        pbHistScore.setVisibility(View.VISIBLE);
 
         listaadd = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
 
@@ -53,10 +50,10 @@ public class HistoricoUsuario extends AppCompatActivity {
             @Override
             public void run() {
                 while (run) {
-                    for (int i = 0; i < sizeusuario; i++) {
+                    for (int i = 0; i < sizescore; i++) {
                         try {
-                            pbHist.setProgress(i);
-                            listaadd.add(cliente.get(i));
+                            pbHistScore.setProgress(i);
+                            listaadd.add(score.get(i));
                             Thread.sleep(100);
                         }
                         catch (InterruptedException e){
@@ -71,7 +68,7 @@ public class HistoricoUsuario extends AppCompatActivity {
                         public void run() {
                             lista.setAdapter(listaadd);
                             lista.setVisibility(View.VISIBLE);
-                            pbHist.setVisibility(View.INVISIBLE);
+                            pbHistScore.setVisibility(View.INVISIBLE);
                         }
                     });
                 }

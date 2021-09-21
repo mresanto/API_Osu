@@ -11,7 +11,7 @@ import com.example.osu.Classes.Usuario;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static int versao = 2;
+    private static int versao = 3;
     private static String nome = "Osu_DB";
 
     public DBHelper(@Nullable Context context){

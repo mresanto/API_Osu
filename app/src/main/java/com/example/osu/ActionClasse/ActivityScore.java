@@ -1,4 +1,4 @@
-package com.example.osu;
+package com.example.osu.ActionClasse;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,11 +18,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.osu.CarregarClasses.CarregaScore;
-import com.example.osu.CarregarClasses.CarregaUsuario;
-import com.example.osu.Classes.ActionScore;
-import com.example.osu.Classes.ActionUsuario;
 import com.example.osu.Classes.UserRecent;
-import com.example.osu.Classes.Usuario;
+import com.example.osu.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
