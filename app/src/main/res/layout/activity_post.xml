@@ -2,24 +2,24 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/TextAppearance.AppCompat.Widget.Button"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Activitys.HistoricoUsuario">
+    tools:context=".Activitys.ActivityPost">
 
-    <ProgressBar
-        android:id="@+id/pbhist"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnAddPost"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp" />
+        android:layout_gravity="bottom|right"
+        android:text="Add"
+        android:textColor="#000000" />
 
     <ListView
-        android:id="@+id/lvUsuarios"
+        android:id="@+id/lvPost"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </ListView>
-
 </FrameLayout>

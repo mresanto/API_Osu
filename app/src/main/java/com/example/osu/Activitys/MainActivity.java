@@ -1,4 +1,4 @@
-package com.example.osu.ActionClasse;
+package com.example.osu.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnUsuario;
     Button btnScore;
     Button btnLocalizacao;
+    Button btnForum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btnUsuario = findViewById(R.id.btnUsuario);
         btnScore = findViewById(R.id.btnScore);
         btnLocalizacao = findViewById(R.id.btnLoc);
+        btnForum = findViewById(R.id.btnForum);
 
 
         btnUsuario.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +50,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnForum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ActivityPost.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 

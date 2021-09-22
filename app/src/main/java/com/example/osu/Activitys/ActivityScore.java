@@ -1,4 +1,4 @@
-package com.example.osu.ActionClasse;
+package com.example.osu.Activitys;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.osu.ActionClasse.ActionScore;
 import com.example.osu.CarregarClasses.CarregaScore;
 import com.example.osu.Classes.UserRecent;
 import com.example.osu.R;

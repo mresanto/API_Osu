@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActionClasse.MainActivity">
+    tools:context=".Activitys.MainActivity">
 
     <Button
         android:id="@+id/btnUsuario"
@@ -24,6 +24,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Localização"
+        />
+
+    <Button
+        android:id="@+id/btnForum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fórum"
         />
 
 </LinearLayout>

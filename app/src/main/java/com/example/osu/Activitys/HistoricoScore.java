@@ -1,4 +1,4 @@
-package com.example.osu.ActionClasse;
+package com.example.osu.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 

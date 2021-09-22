@@ -16,8 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Osu"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".ActionClasse.HistoricoScore"></activity>
-        <activity android:name=".ActionClasse.ActivityScore" />
+        <activity android:name=".Activitys.DetalhePost"></activity>
+        <activity android:name=".Activitys.ActivityPost" />
+        <activity android:name=".Activitys.HistoricoScore" />
+        <activity android:name=".Activitys.ActivityScore" />
 
         <receiver android:name=".OsuWidget">
             <intent-filter>
@@ -29,10 +31,10 @@
                 android:resource="@xml/osu_widget_info" />
         </receiver>
 
-        <activity android:name=".ActionClasse.Localizacao" />
-        <activity android:name=".ActionClasse.HistoricoUsuario" />
-        <activity android:name=".ActionClasse.OsuUsuario" />
-        <activity android:name=".ActionClasse.MainActivity">
+        <activity android:name=".Activitys.Localizacao" />
+        <activity android:name=".Activitys.HistoricoUsuario" />
+        <activity android:name=".Activitys.OsuUsuario" />
+        <activity android:name=".Activitys.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

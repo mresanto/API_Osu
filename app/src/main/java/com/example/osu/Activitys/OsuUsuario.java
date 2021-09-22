@@ -1,4 +1,4 @@
-package com.example.osu.ActionClasse;
+package com.example.osu.Activitys;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.osu.ActionClasse.ActionUsuario;
 import com.example.osu.CarregarClasses.CarregaUsuario;
 import com.example.osu.Classes.Usuario;
 import com.example.osu.R;
