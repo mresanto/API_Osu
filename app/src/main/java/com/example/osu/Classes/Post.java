@@ -12,6 +12,7 @@ public class Post {
     public String Date;
     public String Username;
 
+
     public Post(int postId, String titulo, String sub_Titulo, String descricao, String visualizacoes, String date, String username) {
         PostId = postId;
         Titulo = titulo;
