@@ -12,25 +12,24 @@
         android:id="@+id/btnUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Usuario" />
+        android:text="@string/usuario_main" />
+
     <Button
         android:id="@+id/btnScore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Score" />
+        android:text="@string/score_main" />
 
     <Button
         android:id="@+id/btnLoc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Localização"
-        />
+        android:text="@string/localizacao_main" />
 
     <Button
         android:id="@+id/btnForum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fórum"
-        />
+        android:text="@string/forum_main" />
 
 </LinearLayout>
