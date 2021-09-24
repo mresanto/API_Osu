@@ -14,6 +14,10 @@ public class Login {
         Senha = senha;
     }
 
+    public Login(){
+
+    }
+
     public int getUserId() {
         return UserId;
     }
