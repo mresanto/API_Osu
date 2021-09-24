@@ -13,7 +13,7 @@ import java.net.URL;
 public class NetworkUtilsLogin {
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
 
-    private static final String URL = "http://192.168.0.102:5000/api/login/";
+    private static final String URL = "http://10.0.2.2:5000/api/login/";
 
 
     public static String buscaUsername(String queryString){

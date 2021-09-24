@@ -11,12 +11,14 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.text.BoringLayout;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.osu.Adapter.AdapterPost;
+import com.example.osu.CarregarClasses.CarregaLogin;
 import com.example.osu.CarregarClasses.CarregaPost;
 import com.example.osu.Classes.Post;
 import com.example.osu.R;
@@ -98,7 +100,7 @@ public class Login extends AppCompatActivity implements LoaderManager.LoaderCall
         if (args != null) {
             queryString = args.getString("queryString");
         }
-        return new CarregaPost(this, queryString);
+        return new CarregaLogin(this, queryString);
     }
 
     @Override
@@ -109,15 +111,12 @@ public class Login extends AppCompatActivity implements LoaderManager.LoaderCall
 
             try {
                     JSONObject loginapi = jsonArray.getJSONObject(0);
-                    login1.setUserId(loginapi.getInt("id"));
-                    login1.setUsername(loginapi.getString("username"));
-                    login1.setSenha(loginapi.getString("senha"));
-                    login1.setEmail(loginapi.getString("email"));
+                    Boolean boll = (loginapi.getBoolean("id"));
 
                 String User = editTextUser.getText().toString();
                 String Senha = editTextSenha.getText().toString();
 
-                if(login1.Username == User && login1.Senha == Senha) {
+                if(boll) {
                     Intent intent = new Intent(Login.this, MainActivity.class);
                     intent.putExtra("Valor", editTextUser.getText().toString());
                     startActivity(intent);
