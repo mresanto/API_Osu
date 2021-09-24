@@ -61,6 +61,8 @@ public class OsuUsuario extends AppCompatActivity implements LoaderManager.Loade
         userName = findViewById(R.id.edPesquisaUsuario);
         btnHist = findViewById(R.id.btnHist);
 
+        getSupportActionBar().hide();
+
         if (getSupportLoaderManager().getLoader(0) != null){
             getSupportLoaderManager().initLoader(0, null, this);
         }

@@ -18,6 +18,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        getSupportActionBar().hide();
+
         editTextUser = (EditText)findViewById(R.id.editTextUsuario);
         editTextSenha = (EditText)findViewById(R.id.editTextSenha);
     }
@@ -26,6 +28,7 @@ public class Login extends AppCompatActivity {
             Intent intent = new Intent(Login.this, MainActivity.class);
             intent.putExtra("Valor", editTextUser.getText().toString());
             startActivity(intent);
+            finish();
         }
     }
     public boolean validacao(){
@@ -40,5 +43,9 @@ public class Login extends AppCompatActivity {
             editTextSenha.setError("Preencha este campo!");
         }
         return retorno;
+    }
+    public void Cadastro(View view) {
+            Intent intent = new Intent(Login.this, Cadastro.class);
+            startActivity(intent);
     }
 }

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/osu_dark_background"
     tools:context=".Activitys.OsuUsuario">
 
     <LinearLayout
@@ -19,7 +20,10 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/usuario"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/cardview_light_background"
+            android:textColorLink="@color/pink" />
 
         <Button
             android:id="@+id/btnPesquisaUsuario"
@@ -34,152 +38,240 @@
             />
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-
-        <TextView
-            android:id="@+id/txtID"
-            android:layout_width="100dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/user_id"
-            android:textSize="18sp" />
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/txtUsername"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/username"
-            android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/txtID"
+                    android:layout_width="101dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/user_id"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
 
-        <TextView
-            android:id="@+id/txtPP"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/pp_rank"
-            android:textSize="18sp" />
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pink_bar" />
+
+                <TextView
+                    android:id="@+id/txtUsername"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/username"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
 
-        <TextView
-            android:id="@+id/txtLevel"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/level"
-            android:textSize="18sp" />
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pink_bar" />
+
+                <TextView
+                    android:id="@+id/txtPP"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/pp_rank"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
 
-        <TextView
-            android:id="@+id/txtPlaycount"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/playcount"
-            android:textSize="18sp" />
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pink_bar" />
+
+                <TextView
+                    android:id="@+id/txtLevel"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/level"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
 
-        <TextView
-            android:id="@+id/txtAcc"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/accuracy"
-            android:textSize="18sp" />
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pink_bar" />
+
+                <TextView
+                    android:id="@+id/txtPlaycount"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/playcount"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
 
-        <TextView
-            android:id="@+id/txtSS"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/rank_ss"
-            android:textSize="18sp" />
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pink_bar" />
+
+                <TextView
+                    android:id="@+id/txtAcc"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/accuracy"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
 
-        <TextView
-            android:id="@+id/txtSSH"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/rank_ssh"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pink_bar" />
+
+                <TextView
+                    android:id="@+id/txtSS"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rank_ss"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
 
-        <TextView
-            android:id="@+id/txtS"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/rank_s"
-            android:textSize="18sp" />
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pink_bar" />
+
+                <TextView
+                    android:id="@+id/txtSSH"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rank_ssh"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
 
-        <TextView
-            android:id="@+id/txtSH"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/rank_sh"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pink_bar" />
+
+                <TextView
+                    android:id="@+id/txtS"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rank_s"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
 
-        <TextView
-            android:id="@+id/txtA"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/rank_a"
-            android:textSize="18sp" />
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pink_bar" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/txtSH"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rank_sh"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnHist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Historico" />
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pink_bar" />
+
+                <TextView
+                    android:id="@+id/txtA"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rank_a"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="122dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pink_bar" />
+
+                <Button
+                    android:id="@+id/btnHist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Historico" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

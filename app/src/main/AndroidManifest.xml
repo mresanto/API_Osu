@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Osu"
         tools:ignore="HardcodedDebugMode">
-        <activity android:name=".Activitys.Login"></activity>
+        <activity android:name=".Activitys.Cadastro"></activity>
+        <activity android:name=".Activitys.Login" />
         <activity android:name=".Activitys.DetalhePost" />
         <activity android:name=".Activitys.ActivityPost" />
         <activity android:name=".Activitys.HistoricoScore" />
