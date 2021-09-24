@@ -5,33 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/osu_dark_background"
     android:gravity="center_horizontal"
     tools:context=".Activitys.Localizacao">
 
 
     <Button
         android:id="@+id/btnGetLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pegar Localização" />
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:background="@drawable/background_osu"
+        android:text="@string/localization"
+        app:backgroundTintMode="screen" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="32dp">
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/txtlatitude"/>
 
         <TextView
+            android:id="@+id/txtlatitude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/txtlongtude"/>
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/txtlongtude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 
@@ -42,16 +47,18 @@
         android:layout_marginTop="16dp">
 
         <TextView
+            android:id="@+id/txtcountry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/txtcountry"/>
+            android:textColor="#FFFFFF" />
 
         <TextView
+            android:id="@+id/txtlocality"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/txtlocality"/>
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 
@@ -62,11 +69,12 @@
         android:layout_marginTop="16dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:id="@+id/txtadress"
-            />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="#FFFFFF" />
     </LinearLayout>
 
 </LinearLayout>

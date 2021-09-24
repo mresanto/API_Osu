@@ -20,7 +20,7 @@ public class DetalhePost extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhe_post);
-
+        getSupportActionBar().hide();
         Autor = (TextView) findViewById(R.id.txtAutor);
         Date = (TextView) findViewById(R.id.txtData);
         Desc = (TextView) findViewById(R.id.txtDescricao);

@@ -34,7 +34,7 @@ public class HistoricoScore extends AppCompatActivity {
         pbHistScore = (ProgressBar) findViewById(R.id.pbhistScore);
         lista = (ListView) findViewById(R.id.lvScores);
         lista.setVisibility(View.INVISIBLE);
-
+        getSupportActionBar().hide();
         ActionScore scores = new ActionScore(this);
         long delay = 1000;
 

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/osu_dark_background"
     tools:context=".Activitys.OsuUsuario">
 
     <LinearLayout
@@ -14,11 +15,13 @@
 
         <EditText
             android:id="@+id/edPesquisaUsuario"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/usuario"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:inputType="textPersonName" />
 
         <Button
@@ -29,77 +32,110 @@
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="Pesquisar"
+            android:text="@string/btn_pesquisar"
             android:onClick="buscaUsuario"
             />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="165dp"
         android:orientation="vertical">
 
 
         <TextView
             android:id="@+id/beatmap"
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:text="@string/user_id"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pink_bar" />
 
         <TextView
             android:id="@+id/score"
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="Score"
+            android:text="@string/score"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pink_bar" />
 
         <TextView
             android:id="@+id/maxcombo"
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="Max Combo"
+            android:text="@string/max_combo"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pink_bar" />
 
         <TextView
             android:id="@+id/countmiss"
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="Miss Count"
+            android:text="@string/miss_count"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pink_bar" />
 
         <TextView
             android:id="@+id/rank"
-            android:layout_width="100dp"
+            android:layout_width="122dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="Rank"
+            android:text="@string/rank"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
-
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pink_bar" />
 
 
     </LinearLayout>
@@ -109,6 +145,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Historico" />
+        android:text="@string/btn_historico" />
 
 </LinearLayout>

@@ -57,7 +57,7 @@ public class ActivityScore extends AppCompatActivity implements LoaderManager.Lo
                 startActivity(intent);
             }
         });
-
+        getSupportActionBar().hide();
 
     }
     public void buscaUsuario(View view){

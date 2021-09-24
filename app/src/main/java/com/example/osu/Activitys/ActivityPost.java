@@ -49,7 +49,7 @@ public class ActivityPost extends AppCompatActivity implements LoaderManager.Loa
         if (getSupportLoaderManager().getLoader(0) != null) {
             getSupportLoaderManager().initLoader(0, null, this);
         }
-
+        getSupportActionBar().hide();
 
         String queryString = "0";
 

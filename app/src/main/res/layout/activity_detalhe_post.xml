@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/osu_dark_background"
     tools:context=".Activitys.DetalhePost">
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_marginLeft="52dp"
         android:layout_marginTop="36dp"
         android:text="Autor"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,6 +27,7 @@
         android:layout_marginLeft="52dp"
         android:layout_marginTop="20dp"
         android:text="Descricao"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtAutor" />
 
@@ -36,6 +39,7 @@
         android:layout_marginLeft="64dp"
         android:layout_marginBottom="20dp"
         android:text="Data"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/txtDescricao"
         app:layout_constraintStart_toEndOf="@+id/txtAutor" />
 
@@ -51,11 +55,13 @@
         <Button
             android:id="@+id/btnAddComment"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
             android:layout_gravity="bottom|right"
+            android:background="@drawable/background_osu"
             android:text="Add"
-            android:textColor="#000000" />
+            android:textColor="@color/black"
+            app:backgroundTintMode="screen" />
 
         <ListView
             android:id="@+id/lvComment"

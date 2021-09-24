@@ -35,7 +35,7 @@ public class HistoricoUsuario extends AppCompatActivity {
         pbHist = (ProgressBar) findViewById(R.id.pbhist);
         lista = (ListView) findViewById(R.id.lvUsuarios);
         lista.setVisibility(View.INVISIBLE);
-
+        getSupportActionBar().hide();
         ActionUsuario usuario = new ActionUsuario(this);
         long delay = 1000;
 

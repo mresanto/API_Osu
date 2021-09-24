@@ -36,6 +36,7 @@ public class Localizacao extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_localizacao);
 
+        getSupportActionBar().hide();
 
         btnGetLocation = findViewById(R.id.btnGetLocation);
         lat = findViewById(R.id.txtlatitude);

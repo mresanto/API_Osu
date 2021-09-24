@@ -33,7 +33,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="Pesquisar"
+            android:text="@string/btn_pesquisar"
             android:onClick="buscaUsuario"
             />
     </LinearLayout>
@@ -55,7 +55,7 @@
 
                 <TextView
                     android:id="@+id/txtID"
-                    android:layout_width="101dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
@@ -74,7 +74,7 @@
 
                 <TextView
                     android:id="@+id/txtUsername"
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
@@ -93,7 +93,7 @@
 
                 <TextView
                     android:id="@+id/txtPP"
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
@@ -112,7 +112,7 @@
 
                 <TextView
                     android:id="@+id/txtLevel"
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
@@ -131,7 +131,7 @@
 
                 <TextView
                     android:id="@+id/txtPlaycount"
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
@@ -150,7 +150,7 @@
 
                 <TextView
                     android:id="@+id/txtAcc"
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
@@ -268,7 +268,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Historico" />
+                    android:text="@string/btn_historico" />
 
             </LinearLayout>
         </LinearLayout>
