@@ -37,10 +37,10 @@
 
             <TextView
                 android:id="@+id/txtLogin"
-                android:layout_width="132dp"
+                android:layout_width="215dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/login"
+                android:text="@string/cadastro"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textColor="@color/white" />
@@ -63,7 +63,7 @@
                 android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/txtSenhaLogin"
+                android:id="@+id/txtUserCad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -72,7 +72,7 @@
                 android:textColor="@color/white" />
 
             <EditText
-                android:id="@+id/editTextSenha"
+                android:id="@+id/editTextUserCad"
                 android:layout_width="146dp"
                 android:layout_height="wrap_content"
                 android:autofillHints="usuario"
@@ -91,6 +91,44 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/txtEmailCad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/email"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/editTextEmailCad"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:autofillHints="senha"
+                android:ems="10"
+                android:hint="@string/email_hint"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/pink"
+                android:textColorHint="@color/cardview_dark_background"
+                android:textColorLink="@color/pink"
+                android:textCursorDrawable="@color/purple_200" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="91dp"
             android:orientation="horizontal">
 
@@ -100,7 +138,7 @@
                 android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/txtUsuarioLogin"
+                android:id="@+id/txtSenhaCad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -109,7 +147,7 @@
                 android:textColor="@color/white" />
 
             <EditText
-                android:id="@+id/editTextUsuario"
+                android:id="@+id/editTextSenhaCad"
                 android:layout_width="146dp"
                 android:layout_height="wrap_content"
                 android:autofillHints="senha"
@@ -130,7 +168,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="91dp"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <Space
@@ -140,41 +178,17 @@
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="1dp"
+                android:layout_width="59dp"
                 android:layout_height="39dp"
                 android:layout_weight="1"
                 android:background="@drawable/background_osu"
-                android:onClick="Entrar"
-                android:text="@string/button_login"
+                android:text="@string/button_cad"
                 app:backgroundTint="#E3399A" />
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="34dp"
-                android:layout_height="26dp"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="38dp"
-                android:layout_weight="1"
-                android:onClick="Cadastro"
-                android:text="@string/btn_goto_cad"
-                android:textAlignment="textEnd"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                app:backgroundTint="#00FFFFFF" />
         </LinearLayout>
 
     </LinearLayout>

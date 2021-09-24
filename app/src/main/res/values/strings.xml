@@ -25,4 +25,16 @@
     <string name="localizacao_main">LOCALIZAÇÃO</string>
     <string name="forum_main">FÓRUM</string>
     <string name="welcome">Welcome To Osu!</string>
+
+    <string name="usuario_login">Usuário: </string>
+    <string name="senha_login">Senha: </string>
+    <string name="usuario_hint">usuário</string>
+    <string name="senha_hint">senha</string>
+    <string name="login">Login</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="button_login">ENTRAR</string>
+    <string name="button_cad">CADASTRAR</string>
+    <string name="email">Email: </string>
+    <string name="email_hint">email</string>
+    <string name="btn_goto_cad">Não sou cadastrado</string>
 </resources>

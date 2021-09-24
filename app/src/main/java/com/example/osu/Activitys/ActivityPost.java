@@ -39,7 +39,6 @@ import static androidx.core.content.ContextCompat.getSystemService;
 
 public class ActivityPost extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
-    private ActionPost actionpost;
     private ListView lista;
 
     @Override

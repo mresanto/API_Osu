@@ -13,9 +13,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.BoringLayout;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListView;
 
 import com.example.osu.Adapter.AdapterPost;
 import com.example.osu.CarregarClasses.CarregaLogin;
@@ -28,8 +26,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-
 public class Login extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
 
     EditText editTextUser, editTextSenha;
@@ -39,13 +35,15 @@ public class Login extends AppCompatActivity implements LoaderManager.LoaderCall
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        editTextUser = (EditText)findViewById(R.id.editTextUsuario);
-        editTextSenha = (EditText)findViewById(R.id.editTextSenha);
+        getSupportActionBar().hide();
 
 
     }
+
     public void Entrar(View view) {
         if(validacao()) {
+
+
             if (getSupportLoaderManager().getLoader(0) != null) {
                 getSupportLoaderManager().initLoader(0, null, this);
             }
@@ -73,6 +71,10 @@ public class Login extends AppCompatActivity implements LoaderManager.LoaderCall
             }
 
 
+            Intent intent = new Intent(Login.this, MainActivity.class);
+            intent.putExtra("Valor", editTextUser.getText().toString());
+            startActivity(intent);
+            finish();
         }
     }
     public boolean validacao(){
@@ -102,7 +104,6 @@ public class Login extends AppCompatActivity implements LoaderManager.LoaderCall
         }
         return new CarregaLogin(this, queryString);
     }
-
     @Override
     public void onLoadFinished(@NonNull @NotNull Loader<String> loader, String data) {
         try {
@@ -110,8 +111,8 @@ public class Login extends AppCompatActivity implements LoaderManager.LoaderCall
             com.example.osu.Classes.Login login1 = new com.example.osu.Classes.Login();
 
             try {
-                    JSONObject loginapi = jsonArray.getJSONObject(0);
-                    Boolean boll = (loginapi.getBoolean("id"));
+                JSONObject loginapi = jsonArray.getJSONObject(0);
+                Boolean boll = (loginapi.getBoolean("id"));
 
                 String User = editTextUser.getText().toString();
                 String Senha = editTextSenha.getText().toString();
@@ -132,9 +133,11 @@ public class Login extends AppCompatActivity implements LoaderManager.LoaderCall
 
         }
     }
-
     @Override
-    public void onLoaderReset(@NonNull @NotNull Loader<String> loader) {
+    public void onLoaderReset(@NonNull @NotNull Loader<String> loader) {}
 
+    public void Cadastro(View view) {
+            Intent intent = new Intent(Login.this, Cadastro.class);
+            startActivity(intent);
     }
 }
