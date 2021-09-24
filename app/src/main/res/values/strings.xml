@@ -37,4 +37,11 @@
     <string name="email">Email: </string>
     <string name="email_hint">email</string>
     <string name="btn_goto_cad">Não sou cadastrado</string>
+    <string name="btn_historico">HISTÓRICO</string>
+    <string name="btn_pesquisar">PESQUISAR</string>
+    <string name="score">Score: </string>
+    <string name="max_combo">Max Combo: </string>
+    <string name="miss_count">Miss Count: </string>
+    <string name="rank">Rank: </string>
+    <string name="localization">PEGAR LOCALIZAÇÃO</string>
 </resources>
