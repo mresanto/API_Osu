@@ -14,7 +14,6 @@ public class NetworkUtilsLogin {
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
 
     private static final String URL = "http://192.168.0.102:5000/api/login/";
-    private static final String QUERY_PARAM = "0";
 
 
     public static String buscaUsername(String queryString){
@@ -22,6 +21,7 @@ public class NetworkUtilsLogin {
         BufferedReader reader = null;
         String userJSONString = null;
         try {
+
             URL requestURL = new URL(URL + queryString);
 
             urlConnection = (HttpURLConnection) requestURL.openConnection();

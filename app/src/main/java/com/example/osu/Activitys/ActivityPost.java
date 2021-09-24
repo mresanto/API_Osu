@@ -116,8 +116,9 @@ public class ActivityPost extends AppCompatActivity implements LoaderManager.Loa
 
             int tamanho = jsonArray.length();
 
-            ArrayList<Post> posts = new ArrayList<Post>();
             try {
+                ArrayList<Post> posts = new ArrayList<Post>();
+
                 for(int i = 0; i < jsonArray.length();  i++) {
 
                     JSONObject postapi = jsonArray.getJSONObject(i);
