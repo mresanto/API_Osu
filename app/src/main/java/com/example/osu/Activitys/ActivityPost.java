@@ -114,26 +114,30 @@ public class ActivityPost extends AppCompatActivity implements LoaderManager.Loa
             JSONArray jsonArray = new JSONArray(data);
             Post post = new Post();
 
-            JSONObject postapi = jsonArray.getJSONObject(0);
+            int tamanho = jsonArray.length();
+
+            ArrayList<Post> posts = new ArrayList<Post>();
             try {
-                ArrayList<Post> posts = new ArrayList<Post>();
+                for(int i = 0; i < jsonArray.length();  i++) {
 
-                post.setPostId((postapi.getInt("post_id")));
-                post.setTitulo((postapi.getString("titulo")));
-                post.setSub_Titulo((postapi.getString("sub_titulo")));
-                post.setDescricao((postapi.getString("descricao")));
-                post.setVisualizacoes((postapi.getString("visualizacoes")));
-                post.setDate((postapi.getString("data_post")));
-                post.setUsername((postapi.getString("user_id")));
+                    JSONObject postapi = jsonArray.getJSONObject(i);
+                    post.setPostId((postapi.getInt("id")));
+                    post.setTitulo((postapi.getString("titulo")));
+                    post.setSub_Titulo((postapi.getString("subtitulo")));
+                    post.setDescricao((postapi.getString("descricao")));
+                    post.setVisualizacoes((postapi.getString("visualizacoes")));
+                    post.setDate((postapi.getString("data")));
+                    post.setUsername((postapi.getString("postauthor")));
 
-                posts.add(post);
-
+                    posts.add(i, post);
+                }
 
                 lista = (ListView) findViewById(R.id.lvPost);
 
 
                 ArrayAdapter adapter = new AdapterPost(this, posts);
                 lista.setAdapter(adapter);
+
 
             } catch (JSONException e) {
                 e.printStackTrace();

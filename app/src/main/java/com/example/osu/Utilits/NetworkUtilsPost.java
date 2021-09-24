@@ -13,7 +13,7 @@ import java.net.URL;
 public class NetworkUtilsPost {
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
 
-    private static final String URL = "http://192.168.0.106:5000/api/post/0";
+    private static final String URL = "http://192.168.0.102:5000/api/post/0";
     private static final String QUERY_PARAM = "0";
 
 
